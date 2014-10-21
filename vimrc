@@ -39,6 +39,8 @@ NeoBundle 'jamessan/vim-gnupg'
 NeoBundle 'StanAngeloff/php.vim.git'
 NeoBundle 'seveas/bind.vim'
 NeoBundle 'tpope/vim-markdown'
+NeoBundle 'pangloss/vim-javascript'
+
 
 " My Bundles here:
 " Refer to |:NeoBundle-examples|.
