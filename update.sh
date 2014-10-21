@@ -14,7 +14,7 @@ ln -si $REL/vimrc $HOME/.vimrc
 #rm -ri $HOME/.vim
 mkdir $HOME/.vim/
 mkdir $HOME/.vim/bundle
-ln -si $REL/vim/bundle/neobundle.vim $HOME/.vim/bundle/neobundle.vim
+ln -sih $REL/vim/bundle/neobundle.vim $HOME/.vim/bundle/neobundle.vim
 ln -si $REL/vim/colors $HOME/.vim/colors
 ln -si $REL/gitconfig $HOME/.gitconfig
 ln -si $REL/siegerc $HOME/.siegerc
