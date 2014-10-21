@@ -40,7 +40,8 @@ NeoBundle 'StanAngeloff/php.vim.git'
 NeoBundle 'seveas/bind.vim'
 NeoBundle 'tpope/vim-markdown'
 NeoBundle 'pangloss/vim-javascript'
-
+NeoBundle 'ahayman/vim-nodejs-complete'
+NeoBundle 'elzr/vim-json.git'
 
 " My Bundles here:
 " Refer to |:NeoBundle-examples|.
