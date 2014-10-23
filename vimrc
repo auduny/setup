@@ -1,7 +1,4 @@
 " Note: Skip initialization for vim-tiny or vim-small.
-set backspace=eol,start,indent
-syntax enable
-
 if !1 | finish | endif
 
 if has('vim_starting')
@@ -10,6 +7,50 @@ if has('vim_starting')
   " Required:
   set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
+
+set backspace=eol,start,indent
+syntax enable
+
+" sudo rewrite
+ca w!! w !sudo tee >/dev/null "%"
+
+" Display statusline
+set laststatus=2
+" Set how many lines that should be displayed above/under cursor
+set scrolloff=7
+
+" Only search case sensitive if a letter is uppercase
+set ignorecase
+set smartcase
+
+" Increase history and amount of undos to 1000
+set history=1000
+set undolevels=1000
+
+" Don't create backup or swap files
+set nobackup
+set noswapfile
+
+" reopening a file
+if has("autocmd")
+   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+   \| exe "normal! g'\"" | endif
+endif
+
+" Show " in json
+let g:vim_json_syntax_conceal = 0
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS shiftwidth=2 tabstop=2
+autocmd FileType json setlocal shiftwidth=2 tabstop=2
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+autocmd Filetype make setlocal tabstop=8 noexpandtab
+autocmd BufRead,BufNewFile Capfile setlocal filetype=ruby
+autocmd BufRead,BufNewFile profile setlocal filetype=sh
+autocmd BufRead,BufNewFile bigip.conf setlocal filetype=tcl
+autocmd BufRead,BufNewFile /var/named/zones/* setlocal filetype=bindzone
+
 
 " Required:
 call neobundle#begin(expand('~/.vim/bundle/'))
