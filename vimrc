@@ -83,6 +83,7 @@ NeoBundle 'tpope/vim-markdown'
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'ahayman/vim-nodejs-complete'
 NeoBundle 'elzr/vim-json.git'
+NeoBundle 'fatih/vim-go'
 
 " My Bundles here:
 " Refer to |:NeoBundle-examples|.
