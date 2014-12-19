@@ -84,6 +84,9 @@ NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'ahayman/vim-nodejs-complete'
 NeoBundle 'elzr/vim-json.git'
 NeoBundle 'fatih/vim-go'
+NeoBundle 'bling/vim-airline'
+NeoBundle 'nathanaelkane/vim-indent-guides'
+NeoBundle 'altercation/vim-colors-solarized'
 
 " My Bundles here:
 " Refer to |:NeoBundle-examples|.
@@ -201,4 +204,5 @@ smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 if has('conceal')
   set conceallevel=2 concealcursor=i
 endif
-
+set background=dark
+colorscheme solarized
