@@ -9,7 +9,6 @@ if has('vim_starting')
 endif
 
 set backspace=eol,start,indent
-syntax enable
 
 " sudo rewrite
 ca w!! w !sudo tee >/dev/null "%"
@@ -87,6 +86,8 @@ NeoBundle 'fatih/vim-go'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'vim-scripts/IndentConsistencyCop'
 
 " My Bundles here:
 " Refer to |:NeoBundle-examples|.
@@ -204,5 +205,9 @@ smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 if has('conceal')
   set conceallevel=2 concealcursor=i
 endif
+
+
 set background=dark
 colorscheme solarized
+syntax enable
+
