@@ -88,6 +88,8 @@ NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'vim-scripts/IndentConsistencyCop'
+NeoBundle 'aperezdc/vim-template'
+NeoBundle 'othree/html5.vim'
 
 " My Bundles here:
 " Refer to |:NeoBundle-examples|.
