@@ -88,7 +88,7 @@ NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'vim-scripts/IndentConsistencyCop'
-
+NeoBundle 'vim-scripts/ingo-library'
 " My Bundles here:
 " Refer to |:NeoBundle-examples|.
 " Note: You don't set neobundle setting in .gvimrc!
