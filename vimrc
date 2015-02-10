@@ -36,6 +36,11 @@ if has("autocmd")
    \| exe "normal! g'\"" | endif
 endif
 
+"set smartindent
+set tabstop=4
+set shiftwidth=4
+set expandtab
+
 " Show " in json
 let g:vim_json_syntax_conceal = 0
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
@@ -49,6 +54,7 @@ autocmd BufRead,BufNewFile Capfile setlocal filetype=ruby
 autocmd BufRead,BufNewFile profile setlocal filetype=sh
 autocmd BufRead,BufNewFile bigip.conf setlocal filetype=tcl
 autocmd BufRead,BufNewFile /var/named/zones/* setlocal filetype=bindzone
+autocmd BufRead,BufNewFile *.ejs setlocal filetype=html
 
 
 " Required:
