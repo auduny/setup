@@ -8,6 +8,7 @@ git pull
 git submodule init
 git submodule update
 rm .profile
+ln -si $REL/tmux.conf $HOME/.tmux.conf
 ln -si $REL/bashrc $HOME/.bashrc
 ln -si $REL/bash_profile $HOME/.bash_profile
 ln -si $REL/vimrc $HOME/.vimrc
