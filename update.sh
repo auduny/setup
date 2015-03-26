@@ -1,27 +1,65 @@
-#!/bin/bash
+#!/bin/bash -x
 
 #REL=$(pwd |perl -p -e "s|$HOME/||g")
 REL="$HOME/setup"
 PWD=$(pwd)
 
+
+
+function updatelink {
+sourcefile=$1
+file=$2
+if [ ! -e $sourcefile ];then
+    echo sourcefile $sourcefile does not exist
+    exit 0
+fi
+if [ -e $file ]; then
+    if [ -L $file ]; then
+        link=$(readlink -n $file)
+        if [ "$link" != "$sourcefile" ]; then
+            echo $file points to $link not $sourcefile fixing symlink
+            rm -ri $file
+            ln -s $sourcefile $file
+        fi
+
+    else
+        echo $file is not a symlink. Deleting and linking
+        rm -ri $file
+        ln -s $sourcefile $file
+    fi
+else
+    echo $file does not exist. Linking
+    ln -s $sourcefile $file
+
+fi
+}
+
+function makedir {
+dir=$1
+if [ ! -d $dir ];then
+    mkdir -v $dir;
+fi;
+}
+
+
 git pull
 git submodule init
 git submodule update
-rm .profile
-ln -si $REL/tmux.conf $HOME/.tmux.conf
-ln -si $REL/bashrc $HOME/.bashrc
-ln -si $REL/bash_profile $HOME/.bash_profile
-ln -si $REL/vimrc $HOME/.vimrc
+updatelink $REL/tmux.conf $HOME/.tmux.conf
+updatelink $REL/bashrc $HOME/.bashrc
+updatelink $REL/bash_profile $HOME/.bash_profile
+updatelink $REL/vimrc $HOME/.vimrc
 #rm -ri $HOME/.vim
-mkdir $HOME/.vim/
-mkdir $HOME/.vim/bundle
-ln -sih $REL/vim/bundle/neobundle.vim $HOME/.vim/bundle/neobundle.vim
-ln -si $REL/vim/colors $HOME/.vim/colors
-ln -si $REL/gitconfig $HOME/.gitconfig
-ln -si $REL/siegerc $HOME/.siegerc
-ln -si $REL/csshrc $HOME/.csshrc
-ln -si $REL/i2csshrc $HOME/.i2csshrc
-mkdir $HOME/.config
-ln -sf $REL/liquidpromptrc $HOME/.config/liquidpromptrc
-ln -si $REL/ssh/config $HOME/.ssh/config
+makedir $HOME/.vim/
+makedir $HOME/.vim/bundle
+updatelink $REL/vim/bundle/neobundle.vim $HOME/.vim/bundle/neobundle.vim
+updatelink $REL/vim/colors $HOME/.vim/colors
+updatelink $REL/gitconfig $HOME/.gitconfig
+updatelink $REL/siegerc $HOME/.siegerc
+updatelink $REL/csshrc $HOME/.csshrc
+updatelink $REL/i2csshrc $HOME/.i2csshrc
+makedir $HOME/.config
+updatelink $REL/liquidpromptrc $HOME/.config/liquidpromptrc
+updatelink $REL/ssh/config $HOME/.ssh/config
 chmod 0600 $HOME/.ssh/config
+
