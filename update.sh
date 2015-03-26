@@ -1,4 +1,4 @@
-#!/bin/bash -x
+#!/bin/bash
 
 #REL=$(pwd |perl -p -e "s|$HOME/||g")
 REL="$HOME/setup"
