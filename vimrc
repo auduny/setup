@@ -91,7 +91,6 @@ NeoBundle 'elzr/vim-json.git'
 NeoBundle 'fatih/vim-go'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'nathanaelkane/vim-indent-guides'
-NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'vim-scripts/IndentConsistencyCop'
 NeoBundle 'vim-scripts/ingo-library'
@@ -217,6 +216,6 @@ endif
 
 
 set background=dark
-colorscheme solarized
+colorscheme Tomorrow-Night
 syntax enable
 
