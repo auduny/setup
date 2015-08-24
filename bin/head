@@ -1,0 +1,4 @@
+#!/bin/bash
+
+curl -sD - -o /dev/null $@
+

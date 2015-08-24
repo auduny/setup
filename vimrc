@@ -7,55 +7,11 @@ if has('vim_starting')
   " Required:
   set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
-
-set backspace=eol,start,indent
-
-" sudo rewrite
-ca w!! w !sudo tee >/dev/null "%"
-
-" Display statusline
-set laststatus=2
-" Set how many lines that should be displayed above/under cursor
-set scrolloff=7
-
-" Only search case sensitive if a letter is uppercase
-set ignorecase
-set smartcase
-
-" Increase history and amount of undos to 1000
-set history=1000
-set undolevels=1000
-
-" Don't create backup or swap files
-set nobackup
-set noswapfile
-
-" reopening a file
-if has("autocmd")
-   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
-   \| exe "normal! g'\"" | endif
-endif
-
-"set smartindent
-set tabstop=4
-set shiftwidth=4
-set expandtab
-
-" Show " in json
-let g:vim_json_syntax_conceal = 0
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS shiftwidth=2 tabstop=2
-autocmd FileType json setlocal shiftwidth=2 tabstop=2
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-autocmd Filetype make setlocal tabstop=8 noexpandtab
-autocmd BufRead,BufNewFile Capfile setlocal filetype=ruby
-autocmd BufRead,BufNewFile profile setlocal filetype=sh
-autocmd BufRead,BufNewFile bigip.conf setlocal filetype=tcl
-autocmd BufRead,BufNewFile /var/named/zones/* setlocal filetype=bindzone
-autocmd BufRead,BufNewFile *.ejs setlocal filetype=html
-
+set background=dark
+colorscheme Tomorrow-Night
+syntax enable
+"hi Normal ctermbg=none
+"highlight NonText ctermbg=none
 
 " Required:
 call neobundle#begin(expand('~/.vim/bundle/'))
@@ -90,12 +46,12 @@ NeoBundle 'ahayman/vim-nodejs-complete'
 NeoBundle 'elzr/vim-json.git'
 NeoBundle 'fatih/vim-go'
 NeoBundle 'bling/vim-airline'
-NeoBundle 'nathanaelkane/vim-indent-guides'
-NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'vim-scripts/IndentConsistencyCop'
+"NeoBundle 'nathanaelkane/vim-indent-guides'
+"NeoBundle 'scrooloose/nerdtree'
+"NeoBundle 'vim-scripts/IndentConsistencyCop'
 NeoBundle 'vim-scripts/ingo-library'
-NeoBundle 'aperezdc/vim-template'
 NeoBundle 'othree/html5.vim'
+NeoBundle 'c9s/perlomni.vim'
 
 " My Bundles here:
 " Refer to |:NeoBundle-examples|.
@@ -140,12 +96,12 @@ inoremap <expr><C-l>     neocomplete#complete_common_string()
 
 " Recommended key-mappings.
 " <CR>: close popup and save indent.
-inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-function! s:my_cr_function()
-  return neocomplete#close_popup() . "\<CR>"
-  " For no inserting <CR> key.
-  return pumvisible() ? neocomplete#close_popup() : "\<CR>"
-endfunction
+"inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+"function! s:my_cr_function()
+"  return neocomplete#close_popup() . "\<CR>"
+"  " For no inserting <CR> key.
+"  return pumvisible() ? neocomplete#close_popup() : "\<CR>"
+"endfunction
 " <TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 " <C-h>, <BS>: close popup and delete backword char.
@@ -193,30 +149,3 @@ endif
 " For perlomni.vim setting.
 " https://github.com/c9s/perlomni.vim
 let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
-
-"snippets
-
-" Plugin key-mappings.
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
-
-" SuperTab like snippets behavior.
-imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)"
-\: pumvisible() ? "\<C-n>" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)"
-\: "\<TAB>"
-
-" For snippet_complete marker.
-if has('conceal')
-  set conceallevel=2 concealcursor=i
-endif
-
-
-set background=dark
-colorscheme Tomorrow-Night
-syntax enable
-hi Normal ctermbg=none
-highlight NonText ctermbg=none
