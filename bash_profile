@@ -23,12 +23,6 @@ export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 # Finished adapting your PATH environment variable for use with MacPorts.
 
 
-# The next line updates PATH for the Google Cloud SDK.
-source '/Users/ay/y/google-cloud-sdk/path.bash.inc'
-
-# The next line enables shell command completion for gcloud.
-source '/Users/ay/y/google-cloud-sdk/completion.bash.inc'
-
 ##
 # Your previous /Users/ay/.bash_profile file was backed up as /Users/ay/.bash_profile.macports-saved_2015-10-23_at_09:15:27
 ##

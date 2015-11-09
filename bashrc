@@ -25,4 +25,3 @@ export EDITOR=vim
 export LANG=en_US.UTF-8
 export TERM=screen-256color
 
-alias dockerize=eval "$(docker-machine env default)";
