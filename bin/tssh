@@ -41,6 +41,5 @@ do
 done
  
 tmux set-window-option synchronize-panes on
-tmux set-window-option mouse-select-pane on
 tmux attach -t $session
 
