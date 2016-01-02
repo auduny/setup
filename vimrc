@@ -77,6 +77,7 @@ NeoBundle 'vim-scripts/ingo-library'
 NeoBundle 'othree/html5.vim'
 NeoBundle 'c9s/perlomni.vim'
 NeoBundle 'ekalinin/Dockerfile.vim'
+NeoBundle 'fatih/vim-nginx'
 
 " My Bundles here:
 " Refer to |:NeoBundle-examples|.
