@@ -78,6 +78,8 @@ NeoBundle 'othree/html5.vim'
 NeoBundle 'c9s/perlomni.vim'
 NeoBundle 'ekalinin/Dockerfile.vim'
 NeoBundle 'fatih/vim-nginx'
+NeoBundle 'sclo/haproxy.vim'
+
 
 " My Bundles here:
 " Refer to |:NeoBundle-examples|.
