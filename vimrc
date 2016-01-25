@@ -181,4 +181,4 @@ let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 " Other stuff
 
 let g:vim_json_syntax_conceal = 0
-
+set laststatus=2
