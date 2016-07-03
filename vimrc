@@ -32,7 +32,7 @@ set incsearch     " show search matches as you type
 cmap w!! w !sudo tee % >/dev/null
 
 set background=dark
-colorscheme Tomorrow-Night
+"colorscheme Tomorrow-Night
 syntax enable
 "hi Normal ctermbg=none
 "highlight NonText ctermbg=none
@@ -71,7 +71,7 @@ NeoBundle 'elzr/vim-json.git'
 NeoBundle 'fatih/vim-go'
 NeoBundle 'bling/vim-airline'
 "NeoBundle 'nathanaelkane/vim-indent-guides'
-"NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'scrooloose/nerdtree'
 "NeoBundle 'vim-scripts/IndentConsistencyCop'
 NeoBundle 'vim-scripts/ingo-library'
 NeoBundle 'othree/html5.vim'
@@ -79,7 +79,6 @@ NeoBundle 'c9s/perlomni.vim'
 NeoBundle 'ekalinin/Dockerfile.vim'
 NeoBundle 'fatih/vim-nginx'
 NeoBundle 'sclo/haproxy.vim'
-
 
 " My Bundles here:
 " Refer to |:NeoBundle-examples|.

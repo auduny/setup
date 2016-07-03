@@ -1,0 +1,21 @@
+---
+- hosts: localhost
+  connection: local
+
+  tasks:
+    - name: "brew install vim,awscli,lua,ncdu,mutt,openssl,tmux,htop"
+      homebrew: name=vim state=present
+      homebrew: name=awsclie state=present
+      homebrew: name=lua state=present
+      homebrew: name=ncdu state=present
+      homebrew: name=mutt state=present
+      homebrew: name=openssl state=present
+      homebrew: name=tmux state=present
+      homebrew: name=htop state=present
+
+    - name: "brew cask install spotify,iterm2"
+      homebrew_cask: name=spotify state=present
+      homebrew_cask: name=iterm2 state=present
+      homebrew_cask: name=virtualbox state=present
+      homebrew_cask: name=vagrant state=present
+      homebrew_cask: name=vlc state=present
