@@ -3,7 +3,7 @@
   connection: local
 
   tasks:
-    - name: "brew install vim,awscli,lua,ncdu,mutt,openssl,tmux,htop"
+    - name: "brew install alot"
       homebrew: name=vim state=present
       homebrew: name=awsclie state=present
       homebrew: name=lua state=present
@@ -12,6 +12,11 @@
       homebrew: name=openssl state=present
       homebrew: name=tmux state=present
       homebrew: name=htop state=present
+      homebrew: name=bash-completion state=present
+      homebrew: name=geoip state=present
+      homebrew: name=lftp state=present
+      homebrew: name=links state=present
+      homebrew: name=nmap state=present
 
     - name: "brew cask install spotify,iterm2"
       homebrew_cask: name=spotify state=present

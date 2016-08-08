@@ -32,7 +32,7 @@ set incsearch     " show search matches as you type
 cmap w!! w !sudo tee % >/dev/null
 
 set background=dark
-"colorscheme Tomorrow-Night
+colorscheme Tomorrow-Night
 syntax enable
 "hi Normal ctermbg=none
 "highlight NonText ctermbg=none
