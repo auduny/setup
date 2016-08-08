@@ -12,6 +12,7 @@
       homebrew: name=openssl state=present
       homebrew: name=tmux state=present
       homebrew: name=htop state=present
+      homebrew: name=bash state=present
       homebrew: name=bash-completion state=present
       homebrew: name=geoip state=present
       homebrew: name=lftp state=present
