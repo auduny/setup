@@ -4,24 +4,28 @@
 
   tasks:
     - name: "brew install alot"
-      homebrew: name=vim state=present
-      homebrew: name=awsclie state=present
-      homebrew: name=lua state=present
-      homebrew: name=ncdu state=present
-      homebrew: name=mutt state=present
-      homebrew: name=openssl state=present
-      homebrew: name=tmux state=present
-      homebrew: name=htop state=present
-      homebrew: name=bash state=present
-      homebrew: name=bash-completion state=present
-      homebrew: name=geoip state=present
-      homebrew: name=lftp state=present
-      homebrew: name=links state=present
-      homebrew: name=nmap state=present
+      homebrew: name={{ item }} state=present
+      with_items:
+       - vim
+       - awscli
+       - lua
+       - ncdu
+       - mutt
+       - openssl
+       - tmux
+       - htop
+       - bash
+       - bash-completion
+       - geoip
+       - lftp
+       - links
+       - nmap
 
     - name: "brew cask install spotify,iterm2"
-      homebrew_cask: name=spotify state=present
-      homebrew_cask: name=iterm2 state=present
-      homebrew_cask: name=virtualbox state=present
-      homebrew_cask: name=vagrant state=present
-      homebrew_cask: name=vlc state=present
+      homebrew_cask: name={{ item }} state=present
+      with_items:
+       - spotify
+       - iterm2
+       - virtualbox
+       - vagrant
+       - vlc 
