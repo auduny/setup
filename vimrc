@@ -13,8 +13,12 @@ let mapleader=","
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
+
+
 set tabstop=4     " a tab is four spaces
 set shiftwidth=4  " number of spaces to use for autoindenting
+set softtabstop=4
+set expandtab
 set backspace=indent,eol,start
                     " allow backspacing over everything in insert mode
 set autoindent    " always set autoindenting on
@@ -79,6 +83,7 @@ NeoBundle 'c9s/perlomni.vim'
 NeoBundle 'ekalinin/Dockerfile.vim'
 NeoBundle 'fatih/vim-nginx'
 NeoBundle 'sclo/haproxy.vim'
+NeoBundle 'chase/vim-ansible-yaml'
 
 " My Bundles here:
 " Refer to |:NeoBundle-examples|.
@@ -120,6 +125,7 @@ let g:neocomplete#keyword_patterns['default'] = '\h\w*'
 " Plugin key-mappings.
 inoremap <expr><C-g>     neocomplete#undo_completion()
 inoremap <expr><C-l>     neocomplete#complete_common_string()
+
 
 " Recommended key-mappings.
 " <CR>: close popup and save indent.
@@ -181,3 +187,12 @@ let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 
 let g:vim_json_syntax_conceal = 0
 set laststatus=2
+
+autocmd FileType html,xhtml,css,xml,xslt set shiftwidth=2 softtabstop=2
+autocmd FileType vim,lua,nginx set shiftwidth=2 softtabstop=2
+autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0
+
+autocmd FileType yaml set ts=2 sts=2 sw=2 expandtab filetype=ansible
+
+inoremap <C-a> <Home>
+inoremap <C-e> <End>

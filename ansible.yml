@@ -17,7 +17,6 @@
        - bash
        - bash-completion
        - geoip
-       - lftp
        - links
        - nmap
 
