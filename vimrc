@@ -22,14 +22,10 @@ set expandtab
 set backspace=indent,eol,start
                     " allow backspacing over everything in insert mode
 set autoindent    " always set autoindenting on
-set copyindent    " copy the previous indentation on autoindenting
 set shiftround    " use multiple of shiftwidth when indenting with '<' and '>'
 set showmatch     " set show matching parenthesis
 set ignorecase    " ignore case when searching
 set smartcase     " ignore case if search pattern is all lowercase,
-                    "    case-sensitive otherwise
-set smarttab      " insert tabs on the start of a line according to
-                    "    shiftwidth, not tabstop
 set hlsearch      " highlight search terms
 set incsearch     " show search matches as you type
 
@@ -83,7 +79,7 @@ NeoBundle 'c9s/perlomni.vim'
 NeoBundle 'ekalinin/Dockerfile.vim'
 NeoBundle 'fatih/vim-nginx'
 NeoBundle 'sclo/haproxy.vim'
-NeoBundle 'chase/vim-ansible-yaml'
+NeoBundle 'tpope/vim-commentary'
 
 " My Bundles here:
 " Refer to |:NeoBundle-examples|.
@@ -192,7 +188,7 @@ autocmd FileType html,xhtml,css,xml,xslt set shiftwidth=2 softtabstop=2
 autocmd FileType vim,lua,nginx set shiftwidth=2 softtabstop=2
 autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0
 
-autocmd FileType yaml set ts=2 sts=2 sw=2 expandtab filetype=ansible
+autocmd FileType yaml set ts=2 sts=2 sw=2
 
 inoremap <C-a> <Home>
 inoremap <C-e> <End>
