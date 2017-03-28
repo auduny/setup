@@ -1,2 +1,5 @@
 #/bin/bash -x
-sudo killall -HUP mDNSResponder
+sudo dscacheutil -flushcache;
+sudo killall -HUP mDNSResponder; say cache flushed
+
+
