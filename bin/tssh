@@ -25,12 +25,23 @@ fi
  
 # random session name
 session="tssh-$$"
- 
+
 # get hosts
 host=("$@")
- 
+
+if [ -f ${HOME}/.tssh.conf ];then
+    . ${HOME}/.tssh.conf
+fi
+
+if [ ! -z "${!host}" ]; then
+    # Expand the hosts
+    host=(${!host}) 
+fi
+
+
 # start session and 1st connection 
 echo $session
+echo $host
 tmux -2 new-session -d -s $session "ssh ${host[0]}"
  
  
