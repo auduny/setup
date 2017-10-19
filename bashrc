@@ -8,6 +8,8 @@ else
     alias ls="ls --color=auto -p"
 fi
 
+alias dc=docker-compose
+
 if [ -f /usr/local/etc/bash_completion ]; then
       . /usr/local/etc/bash_completion
 fi
