@@ -13,6 +13,8 @@ let mapleader=","
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
+set list
+set listchars=tab:>-
 
 
 set tabstop=4     " a tab is four spaces
