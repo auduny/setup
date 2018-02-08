@@ -7,3 +7,6 @@ Host *
 Host home
   hostname home.ytterdal.net
   port 1022
+  DynamicForward 1080
+
+
