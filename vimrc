@@ -194,3 +194,6 @@ autocmd FileType yaml set ts=2 sts=2 sw=2
 
 inoremap <C-a> <Home>
 inoremap <C-e> <End>
+
+" Ignore go-error messages on old vim
+let g:go_version_warning = 0
