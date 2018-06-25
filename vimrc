@@ -191,6 +191,7 @@ autocmd FileType vim,lua,nginx set shiftwidth=2 softtabstop=2
 autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0
 
 autocmd FileType yaml set ts=2 sts=2 sw=2
+autocmd BufRead,BufNewFile */etc/named/* set filetype=bindzone
 
 inoremap <C-a> <Home>
 inoremap <C-e> <End>
