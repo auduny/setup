@@ -22,7 +22,7 @@ if [ -f /etc/bash_completion ]; then
 fi
 
 if [ -f $HOME/setup/tools/liquidprompt/liquidprompt ]; then
-    . $HOME/setup/tools/liquidprompt/liquidprompt
+    [[ $- = *i* ]] && source $HOME/.liquidprompt
 fi
 
 export EDITOR=vim
