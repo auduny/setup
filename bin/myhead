@@ -1,4 +1,4 @@
 #!/bin/bash
 
-curl -sD - -o /dev/null --show-error --write-out 'lookup:        %{time_namelookup}\nconnect:       %{time_connect}\nappconnect:    %{time_appconnect}\npretransfer:   %{time_pretransfer}\nredirect:      %{time_redirect}\nstarttransfer: %{time_starttransfer}\ntotal:         %{time_total}\n' $@
+curl -sD - -o /dev/null --show-error --write-out 'dns_resolution:\t\t%{time_namelookup}\ntcp_established:\t%{time_connect}\nssl_handshake_done:\t%{time_appconnect}\nTTFB:\t\t\t%{time_starttransfer}\ntotal:\t\t\t%{time_total}\n' $@
 
