@@ -52,5 +52,5 @@ do
 done
  
 tmux set-window-option synchronize-panes on
-tmux attach -t $session
+tmux -CC attach -t $session
 

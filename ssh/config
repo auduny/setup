@@ -1,6 +1,6 @@
 Host *
   HashKnownHosts no
-  TCPKeepAlive no
-  ServerAliveInterval 15
+#  TCPKeepAlive no
+#  ServerAliveInterval 15
 
 Include config.d/* 
