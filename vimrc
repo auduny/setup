@@ -15,7 +15,7 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
 set list
 set listchars=tab:>-
-
+set modeline
 
 set tabstop=4     " a tab is four spaces
 set shiftwidth=4  " number of spaces to use for autoindenting
