@@ -44,3 +44,6 @@ if [[ -d "$HOME/.okta/bin" && ":$PATH:" != *":$HOME/.okta/bin:"* ]]; then
     PATH="$HOME/.okta/bin:$PATH"
 fi
 
+
+# added by travis gem
+[ -f /Users/ay/.travis/travis.sh ] && source /Users/ay/.travis/travis.sh
